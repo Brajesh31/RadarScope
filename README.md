@@ -1,97 +1,61 @@
-Here is your final, **ready-to-use README** in proper `.md` (Markdown) format — **you can directly paste this into your `README.md` file**:
+<p align="center">
+  <a href="https://github.com/Brajesh31/MSTAR-Tank-Detection">
+    <img src="https://raw.githubusercontent.com/Brajesh31/asset/main/mstar-tank-banner.png" alt="MSTAR Tank Detection Banner">
+  </a>
+</p>
 
+<div align="center">
 
-# 🛡️ MSTAR Tank Detection using Scattering Transform + CNN
+# 🛡️ MSTAR Tank Detection using Scattering Transform + CNN 📡
 
-A lightweight, web-based radar target classification system that detects and classifies military tanks from **SAR (Synthetic Aperture Radar)** images using deep learning techniques. This project was developed at **LRDE, DRDO** as part of real-world defense research exposure by **Irfan Sulfi**, **Adam Nahan**, **Ajmal Shan**, and **Mazin Muneer**.
+**A lightweight, web-based radar target classification system that detects and classifies military tanks from SAR (Synthetic Aperture Radar) images using deep learning techniques.**
 
-It combines the power of **Scattering2D Transform** for feature extraction and a trained **CNN model**, all wrapped in a clean **Flask web interface** for user interaction.
+</div>
 
-
-
-## 🗂️ Project Structure
-
-
-MSTAR-Tank-Detection/
-├── app.py                # Main Flask application
-├── radarmodel.h5         # Pre-trained CNN model
-├── label.pkl             # Label encoder for class predictions
-├── templates/
-│   └── index.html        # Web UI for image upload and result display
-├── uploads/              # Temporary folder to store uploaded images
-
-
-
-## ⚙️ Key Features
-
-- ✅ Upload grayscale SAR images (`.jpg`, `.png`, `.bmp`)
-- 🔄 Automatic preprocessing and classification of radar targets
-- 🧠 Feature extraction using **Scattering2D Transform** (via Kymatio)
-- 🛠️ Prediction via trained **Convolutional Neural Network**
-- 🌐 Flask-powered web interface with simple upload & display workflow
-
-
-## 🚀 Getting Started
-
-### 1️⃣ Clone the Repository
-
-git clone https://github.com/irfansulfi11/MSTAR-Tank-Detection.git
-cd MSTAR-Tank-Detection
-
-
-### 2️⃣ Set Up the Environment
-
-Ensure Python ≥ 3.8 is installed. Then run:
-
-
-pip install -r requirements.txt
-
-
-If `requirements.txt` is not available:
-
-
-pip install flask tensorflow kymatio opencv-python joblib numpy
-
-### 3️⃣ Run the App
-
-python app.py
-
-
-Then open your browser and go to: [http://127.0.0.1:5000](http://127.0.0.1:5000)
-
-
-## 🧠 Model Overview
-
-* **Model Type**: Convolutional Neural Network (CNN)
-* **Input**: 64x64 grayscale SAR images
-* **Feature Extraction**: Scattering2D via Kymatio
-* **Model File**: `radarmodel.h5`
-* **Label Mapping**: `label.pkl`
+<p align="center">
+  <img src="https://img.shields.io/github/stars/Brajesh31/MSTAR-Tank-Detection?style=for-the-badge&color=gold" alt="Stars">
+  &nbsp;
+  <img src="https://img.shields.io/github/last-commit/Brajesh31/MSTAR-Tank-Detection?style=for-the-badge&color=blue" alt="Last Commit">
+  &nbsp;
+  <img src="https://img.shields.io/github/license/Brajesh31/MSTAR-Tank-Detection?style=for-the-badge&color=green" alt="License">
+</p>
 
 ---
 
-## 🖼️ Testing with Sample Images
+## ## ✨ Project Overview
 
-1. Place SAR samples in the `uploads/` folder
-2. Upload via the web UI
-3. Ensure images are grayscale and in `.jpg`, `.jpeg`, `.png`, or `.bmp` format
-4. View predicted results in real-time
+This project provides a web-based system to classify military targets from Synthetic Aperture Radar (SAR) imagery. It combines the powerful feature extraction capabilities of the **Scattering2D Transform** with a trained **Convolutional Neural Network (CNN)** for accurate classification.
 
----
-
-## 📌 Notes
-
-* The app automatically deletes uploaded images after prediction
-* Input images must be grayscale for accurate results
-* Developed as part of defense AI research at **LRDE – DRDO**
+The entire system is wrapped in a clean **Flask** web interface, allowing users to easily upload a SAR image and receive an instant prediction. This implementation was developed by **Brajesh** and is based on research concepts from defense AI applications at LRDE, DRDO.
 
 ---
+## ## ⭐ Core Features
 
-## 🤝 Acknowledgements
-
-Special thanks to our mentors and the research team at **Electronics & Radar Development Establishment (LRDE), DRDO** for their support and guidance.
+* **SAR Image Upload**: Supports grayscale `.jpg`, `.png`, and `.bmp` formats.
+* **Automated Processing**: Automatically preprocesses images for the model.
+* **Advanced Feature Extraction**: Uses the **Scattering2D Transform** (via the Kymatio library) to create robust feature sets.
+* **Deep Learning Prediction**: Classifies targets using a pre-trained CNN model.
+* **Web-Based UI**: A simple, clean interface for uploading images and viewing results.
 
 ---
+## ## 🛠️ Technology Stack
 
-📌 *Star the repo or fork it to build your own radar target classifier!*
+| Category | Technology |
+| :--- | :--- |
+| **Backend** | [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/) [![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/) |
+| **Deep Learning** | [![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/) |
+| **Feature Extraction**| **Kymatio (Scattering Transforms)** |
+| **Data Handling** | [![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/) [![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org/) **Joblib** |
 
+---
+## ## 🧠 How It Works
+
+The classification pipeline is straightforward:
+1.  **Upload**: The user uploads a grayscale SAR image via the Flask web UI.
+2.  **Preprocess**: The image is loaded using OpenCV and resized to the model's required input shape (64x64).
+3.  **Feature Extraction**: The **Scattering2D Transform** is applied to the image to extract stable and informative features.
+4.  **Prediction**: The extracted features are fed into the pre-trained CNN model (`radarmodel.h5`) for classification.
+5.  **Display**: The predicted class label is displayed to the user on the web page.
+
+---
+## ## 📁 Project Structure
